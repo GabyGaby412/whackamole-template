@@ -10,7 +10,7 @@ window_width = grid_width * square_size
 window_height = grid_height * square_size
 screen = pygame.display.set_mode((640, 512))
 
-
+#draws the lines
 def draw_grid():
     for i in range(0, window_width + 1, square_size):
         pygame.draw.line(screen,line_color,(i, 0),(i, window_height))
@@ -25,6 +25,7 @@ def add_mole(mole_x,mole_y):
     # You can draw the mole with this snippet:
     mole_image = pygame.image.load("mole.png")
     screen.blit(mole_image, mole_image.get_rect(topleft=(mole_x, mole_y)))
+#randomly moves the mole.
 def move_mole():
     rand_x = random.randrange(0, grid_width) * square_size
     rand_y = random.randrange(0, grid_height) * square_size
@@ -60,7 +61,6 @@ def main():
             clock.tick(60)
     finally:
         pygame.quit()
-
 
 if __name__ == "__main__":
     main()
